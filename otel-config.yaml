@@ -22,6 +22,12 @@ exporters:
 
 processors:
   batch:
+  decouple:
+  resource:
+      attributes:
+      - action: insert
+        key: team.name
+        value: librarians
 
 
 service:

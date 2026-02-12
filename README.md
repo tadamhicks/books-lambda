@@ -48,7 +48,7 @@ AWS Lambda function instrumented with OpenTelemetry Python SDK for automatic tra
 - Collector: `arn:aws:lambda:<region>:184161586896:layer:opentelemetry-collector-<amd64|arm64>-0_18_0:1`
 
 **Collector Configuration (`otel-config.yaml`):**
-- **Receivers**: `telemetryapi` (Lambda runtime), `otlp` (Python SDK on ports 4317/4318)
+- **Receivers**: `otlp` (Python SDK on ports 4317/4318)
 - **Processors**: `batch`, `decouple`, `resource` (adds `team.name` attribute)
 - **Exporter**: `otlphttp/groundcover` 
 
