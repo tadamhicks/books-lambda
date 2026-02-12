@@ -1,0 +1,10 @@
+.venv/
+lambda-package/
+CLEANUP_SUMMARY.md
+FIX_DEPLOYMENT.md
+cleanup-package.sh
+deployment.zip
+OTTLCONFIG_EXPLANATION.md
+GROUNDCOVER_CONFIG.md
+TRACE_CORRELATION_NOTE.md
+GROUNDCOVER_OTTL_CONFIG.md

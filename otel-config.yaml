@@ -1,0 +1,46 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+exporters:
+  otlp/groundcover:
+    endpoint: experiments.platform-dev.grcv.io:443
+    headers: 
+      apikey: "3trT8IbWi2y04rWKp8ygZSLzmqtCzjsS"
+    compression: zstd
+    tls:
+      insecure: false
+    sending_queue:
+      enabled: true
+      num_consumers: 5
+      queue_size: 1000
+  
+  debug:
+    verbosity: detailed
+
+processors:
+  batch:
+
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/groundcover, debug]
+
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/groundcover, debug]
+
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/groundcover, debug]
+  
+  telemetry:
+    logs:
+      level: "info"
