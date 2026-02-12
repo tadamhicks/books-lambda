@@ -34,17 +34,17 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch]
+      processors: [batch, decouple, resource]
       exporters: [otlp/groundcover, debug]
 
     logs:
       receivers: [otlp]
-      processors: [batch]
+      processors: [batch, decouple, resource]
       exporters: [otlp/groundcover, debug]
 
     metrics:
       receivers: [otlp]
-      processors: [batch]
+      processors: [batch, decouple, resource]
       exporters: [otlp/groundcover, debug]
   
   telemetry:
