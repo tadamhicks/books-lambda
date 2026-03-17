@@ -8,7 +8,7 @@ exporters:
   otlp/groundcover:
     endpoint: experiments.platform-dev.grcv.io:443
     headers: 
-      apikey: "3trT8IbWi2y04rWKp8ygZSLzmqtCzjsS"
+      apikey: "<REDACTED>"
     compression: zstd
     tls:
       insecure: false
